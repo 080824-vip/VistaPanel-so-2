@@ -22,7 +22,7 @@ EXIT;
 EOF
 
 # Cấu hình tệp .env
-cat <<EOT >> $VISTAPANEL_PATH/.env
+cat <<EOT > $VISTAPANEL_PATH/.env
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
@@ -38,7 +38,7 @@ php artisan db:seed
 php artisan key:generate
 
 # Cấu hình Nginx
-sudo cat <<EOT >> /etc/nginx/sites-available/vistapanel
+sudo cat <<EOT > /etc/nginx/sites-available/vistapanel
 server {
     listen 80;
     server_name yourdomain.com;
